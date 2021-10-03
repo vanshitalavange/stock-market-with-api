@@ -6,5 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stock market</title>
   </head>
-  <body></body>
+  <body>
+    <label for="stock-name">Enter stock name</label>
+    <input list="stock-list" id="stock-name" />
+    <datalist class="stock-list"> </datalist>
+    <label for="stock-purchase-price">Enter stock purchase price</label>
+    <input id="stock-purchase-price" type="number" />
+    <label for="stock-quantity">Enter stock quantity</label>
+    <input id="stock-quantity" type="number" />
+    <button id="btn-check">Check</button>
+    <div class="output"></div>
+  </body>
 </html>
