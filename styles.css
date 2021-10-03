@@ -1,0 +1,9 @@
+body {
+  display: block;
+}
+
+#stock-name,
+#stock-purchase-price,
+#stock-quantity {
+  display: block;
+}
