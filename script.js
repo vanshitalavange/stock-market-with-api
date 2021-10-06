@@ -83,7 +83,7 @@ function clickEventHandler() {
         Math.abs(amount) +
         " 😔";
     } else {
-      output.textContent = "No profit, no loss ☺️";
+      output.textContent = "No profit, no loss 😇";
     }
   }
 }
