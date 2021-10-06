@@ -72,16 +72,18 @@ function clickEventHandler() {
         "Yayyy! You have gained profit of " +
         Math.abs(percentage).toFixed(2) +
         "%. Your total profit is " +
-        Math.abs(amount);
+        Math.abs(amount) +
+        " 🤗";
     } else if (amount < 0) {
       container.style.backgroundColor = "#EF4444";
       output.textContent =
         "Oops! You lost " +
         Math.abs(percentage).toFixed(2) +
         "%. Your total loss is " +
-        Math.abs(amount);
+        Math.abs(amount) +
+        " 😔";
     } else {
-      output.textContent = "No profit, no loss";
+      output.textContent = "No profit, no loss ☺️";
     }
   }
 }
