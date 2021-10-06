@@ -46,3 +46,44 @@ function getCurrentPrice(symbolOfStock) {
       currentPrice.value = price;
     });
 }
+function clickEventHandler() {
+  var purchasePrice = Number(stockPurchasePrice.value);
+  var quantityOfStock = Number(stockQuantity.value);
+  var currentPriceOfStock = Number(currentPrice.value);
+
+  if (
+    stockName.value === "" ||
+    stockPurchasePrice.value === "" ||
+    stockQuantity.value === ""
+  ) {
+    output.textContent = "All the fields are mandatory";
+  } else if (purchasePrice === 0 || quantityOfStock === 0) {
+    output.textContent = "Value cannot be zero";
+  } else {
+    var previousValue = purchasePrice * quantityOfStock;
+    var currentValue = currentPriceOfStock * quantityOfStock;
+
+    var amount = (currentValue - previousValue).toFixed(4);
+    var percentage = Math.abs(amount / previousValue).toFixed(4) * 100;
+
+    if (amount > 0) {
+      container.style.backgroundColor = "#10B981";
+      output.textContent =
+        "Yayyy! You have gained profit of " +
+        Math.abs(percentage).toFixed(2) +
+        "%. Your total profit is " +
+        Math.abs(amount);
+    } else if (amount < 0) {
+      container.style.backgroundColor = "#EF4444";
+      output.textContent =
+        "Oops! You lost " +
+        Math.abs(percentage).toFixed(2) +
+        "%. Your total loss is " +
+        Math.abs(amount);
+    } else {
+      output.textContent = "No profit, no loss";
+    }
+  }
+}
+stockName.addEventListener("input", searchResultsAndGetCurrentprice);
+btnCheck.addEventListener("click", clickEventHandler);
