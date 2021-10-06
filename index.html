@@ -8,15 +8,22 @@
     <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
-    <label for="stock-name">Enter stock name</label>
-    <input list="stock-list" id="stock-name" />
-    <datalist class="stock-list"> </datalist>
-    <label for="stock-purchase-price">Enter stock purchase price</label>
-    <input id="stock-purchase-price" type="number" />
-    <label for="stock-quantity">Enter stock quantity</label>
-    <input id="stock-quantity" type="number" />
-    <button id="btn-check">Check</button>
-    <div class="output"></div>
+    <div class="container">
+      <h1>Know Your Stocks!📉</h1>
+      <div class="input-container">
+        <label for="stock-name">Enter stock name</label>
+        <input list="stock-list" id="stock-name" />
+        <datalist id="stock-list"> </datalist>
+        <label for="current-price">Current Price of Stock</label>
+        <input id="current-price" />
+        <label for="stock-purchase-price">Enter stock purchase price</label>
+        <input id="stock-purchase-price" type="number" />
+        <label for="stock-quantity">Enter stock quantity</label>
+        <input id="stock-quantity" type="number" />
+        <button id="btn-check">Check</button>
+        <div id="output"></div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
