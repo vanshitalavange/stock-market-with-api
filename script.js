@@ -17,3 +17,32 @@ function getSearchURL() {
 function getCurrentPriceURL(symbolOfStock) {
   return currentPriceURL + symbolOfStock + "&apikey=8NT09YOGTVEE1ZHM";
 }
+function searchResultsAndGetCurrentprice() {
+  let symbolOfStock = "";
+  fetch(getSearchURL())
+    .then((response) => response.json())
+    .then((json) => {
+      for (let i = 0; i < json.bestMatches.length; i++) {
+        var name = json.bestMatches[i];
+        var stock = Object.values(name);
+        const optionName = document.createElement("option");
+        optionName.value = stock[1];
+        stockList.appendChild(optionName);
+        if (stockName.value === stock[1]) {
+          symbolOfStock = stock[0];
+        }
+      }
+
+      getCurrentPrice(symbolOfStock);
+    });
+}
+function getCurrentPrice(symbolOfStock) {
+  fetch(getCurrentPriceURL(symbolOfStock))
+    .then((response) => response.json())
+    .then((json) => {
+      var timeseriesdaily = Object.values(json)[1];
+      var current = Object.values(timeseriesdaily)[0];
+      var price = Object.values(current)[3];
+      currentPrice.value = price;
+    });
+}
