@@ -1,9 +1,58 @@
-body {
-  display: block;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
-#stock-name,
-#stock-purchase-price,
-#stock-quantity {
+body {
+  font-family: "Montserrat", sans-serif;
   display: block;
+  text-align: center;
+  background-color: #1f2937;
+  max-width: 700px;
+  margin: auto;
+}
+h1 {
+  color: #6366f1;
+}
+label {
+  display: block;
+  margin: auto;
+  color: white;
+  margin-top: 0.5rem;
+}
+.container {
+  max-width: 65%;
+  display: block;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+.input-container {
+  max-width: 100%;
+  background-color: #6366f1;
+  padding: 1.5rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+}
+input {
+  display: block;
+  margin: auto;
+  margin-top: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  height: 30px;
+  width: 55%;
+}
+#btn-check {
+  margin-top: 1rem;
+  border: 1px solid gray;
+  padding: 0.7rem 1.2rem;
+  background-color: #1f2937;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0.3rem;
+}
+#output {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #1f2937;
+  font-size: 1.2rem;
 }
